@@ -28,17 +28,17 @@ public class ThemeUtils {
     public Frame frame;
     
     public static final int
-            questionsX = 125, questionsY = 145,
+            categoriesX = 182, categoriesY = 225, categoriesWidth = 112, categoriesHeight = 36,
+            questionsX = categoriesX + categoriesWidth + 10, questionsY = categoriesY + 5,
             sendAnswerX = 322, sendAnswerY = 230,
-            answerX = 222, answerY = 230,
-            questionX = 10, questionY = 35,
+            answerX = categoriesX + categoriesWidth + 100, answerY = 450,
+            questionX = categoriesX, questionY = categoriesY,
             roundX = 0, roundY = 0,
             pointsX = 0, pointsY = 0,
-            categoriesX = 10, categoriesY = 140, categoriesWidth = 112, categoriesHeight = 36,
-            hideX = 560, hideY = 2, closeX = 600, closeY = 2, dragButtonW = 35, dragButtonH = 24,
+            hideX = 560, hideY = 2, closeX = 951, closeY = 2, dragButtonW = 35, dragButtonH = 24,
             draggerW = 640, draggerH = 30,
-            scoresX = 270, scoresY = 400, scoresW = 100, scoresH = 20,
-            timeX = 270, timeY = 300, timeW = 100, timeH = 20;
+            scoresX = categoriesX + categoriesWidth + 155, scoresY = 500, scoresW = 100, scoresH = 20,
+            timeX = categoriesX + categoriesWidth + 200, timeY = 460, timeW = 100, timeH = 20;
     
     public ThemeUtils(Frame frame) {
         this.frame = frame;

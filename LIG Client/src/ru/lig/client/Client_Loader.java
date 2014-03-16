@@ -28,7 +28,7 @@ import ru.lig.client.listeners.ServerListener;
  */
 public class Client_Loader implements Runnable {
 
-    public static final String version = "1.2.256Alpha";
+    public static final String version = "1.2.257Alpha";
     public static int port = 20223;
     public static String host = "localhost";
     public static Socket socket = null;

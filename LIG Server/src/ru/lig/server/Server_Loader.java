@@ -22,7 +22,7 @@ import ru.lig.server.utils.CommandsListener;
  */
 public class Server_Loader implements Runnable {
     
-    public static final String version = "1.2.256Alpha";
+    public static final String version = "1.2.257Alpha";
     public static int port = 20223;
     public static Socket client = null;
     public static ServerSocket server = null;

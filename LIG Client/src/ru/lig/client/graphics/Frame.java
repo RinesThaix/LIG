@@ -46,7 +46,7 @@ public class Frame extends JFrame {
     public JButton[] categories = new JButton[6];
     public JButton[] questions = new JButton[30];
     public JButton sendAnswer = new JButton("Подтвердить");
-    public int width = 640, height = 480;
+    public int width = 991, height = 800;
     public ThemeUtils tu;
     public Panel panel = new Panel(this);
     
@@ -88,7 +88,7 @@ public class Frame extends JFrame {
         auth.repaint();
         auth.setVisible(true);
         
-        int Dx = 400, Dy = 100;
+        int Dx = 250, Dy = 100;
         for(int i = 0; i < 4; i++) {
             int x = -300, y = -240;
             x += (i & 1) != 0 ? width / 2 + Dx : -Dx;
