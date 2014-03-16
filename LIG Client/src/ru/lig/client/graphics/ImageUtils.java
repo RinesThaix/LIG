@@ -19,7 +19,7 @@ public class ImageUtils {
     public static void loadImages() {
         button = openImage("button.png");
         favicon = openImage("favicon.png");
-        background = openImage("bg2.jpg");
+        background = openImage("background.jpg");
         field = openImage("field.png");
         black_field = openImage("black_field.png");
         white_field = openImage("white_field.png");
