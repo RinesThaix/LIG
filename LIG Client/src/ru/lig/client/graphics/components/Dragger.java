@@ -5,25 +5,27 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import ru.lig.client.Client_Loader;
 
 public class Dragger extends JPanel{
     private static final long serialVersionUID = 1L;
     private int x = 0;
     private int y = 0;
     public JLabel title = new JLabel();
-    public Dragger() {
+    public final JFrame frame;
+    public Dragger(JFrame f) {
+        frame = f;
         setOpaque(false);
         setLayout(new BorderLayout());
         add(title, BorderLayout.CENTER);
         setBorder(new EmptyBorder(0, 10, 0, 10));
         addMouseMotionListener(new MouseMotionAdapter() {
             public void mouseDragged(MouseEvent e) {
-                Client_Loader.gm.graphics.setLocation(e.getX() + Client_Loader.gm.graphics.getX() - x,
-                        e.getY() + Client_Loader.gm.graphics.getY() - y);
+                frame.setLocation(e.getX() + frame.getX() - x,
+                        e.getY() + frame.getY() - y);
             }
         });
         addMouseListener(new MouseListener() {

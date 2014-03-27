@@ -28,7 +28,7 @@ import ru.lig.client.listeners.ServerListener;
  */
 public class Client_Loader implements Runnable {
 
-    public static final String version = "1.2.257Alpha";
+    public static final String version = "1.2.298Alpha";
     public static int port = 20223;
     public static String host = "localhost";
     public static Socket socket = null;
@@ -48,6 +48,7 @@ public class Client_Loader implements Runnable {
     public static GraphicsManager gm;
     public static boolean myMove = false;
     public static Timer timer;
+    public static boolean noImages = false, started = false;
     
     public static void main(String[] args) {
         logln("LIG Client " + version + " Initializing..");

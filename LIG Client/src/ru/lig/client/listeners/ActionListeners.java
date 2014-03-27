@@ -32,7 +32,7 @@ public class ActionListeners implements ActionListener, FocusListener, KeyListen
         if(e.getSource() == frame.close) System.exit(0);
         else if(e.getSource() == frame.hide) frame.setExtendedState(ICONIFIED);
         else if(e.getSource() == frame.auth_button) auth();
-        else if(Client_Loader.myMove) {
+        else if(Client_Loader.myMove && Client_Loader.started) {
             if(e.getSource() == frame.sendAnswer) {
                 String answer = frame.answer.getText().toLowerCase();
                 answer = answer.replace("\"", "");

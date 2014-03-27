@@ -38,7 +38,7 @@ public class Frame extends JFrame {
     public SpecialTextArea question, scores, time;
     public PasswordField password;
     public JButton auth_button = new JButton("Авторизоваться");
-    public Dragger dragger = new Dragger();
+    public Dragger dragger = new Dragger(this);
     public DragButton close = new DragButton(), hide = new DragButton();
     
     //Таблица вопросов
@@ -88,13 +88,7 @@ public class Frame extends JFrame {
         auth.repaint();
         auth.setVisible(true);
         
-        int Dx = 250, Dy = 100;
-        for(int i = 0; i < 4; i++) {
-            int x = -300, y = -240;
-            x += (i & 1) != 0 ? width / 2 + Dx : -Dx;
-            y += i > 1 ? height / 2 + Dy : -Dy;
-            ifs[i] = new ImageFrame(this, x, y);
-        }
+        for(int i = 0; i < 4; i++) ifs[i] = new ImageFrame(this, 0, 0, i + 1);
     }
     
     @SuppressWarnings("empty-statement")

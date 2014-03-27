@@ -62,7 +62,7 @@ public class ServerListener {
             }else frame.tu.setTableState();
         }else if(response.startsWith("QUESTIONS_CATEGORIES")) {
             String[] args = response.split(" ");
-            for(int i = 1; i < categories.length + 1; i++) categories[i - 1] = args[i];
+            for(int i = 1; i < categories.length + 1 && i < args.length; i++) categories[i - 1] = args[i].replace("_", " ");
         }else if(response.startsWith("QUESTIONS")) {
             String[] args = response.split(" ");
             //int total = args[1];
@@ -94,7 +94,8 @@ public class ServerListener {
             if(timer != null && timer.isRunning()) timer.stop();
             if(correct) Frame.listeners.correctAnswer(Client_Loader.myMove);
             else Frame.listeners.wrongAnswer(Client_Loader.myMove);
-        }
+        }else if(response.equals("noImages")) Client_Loader.noImages = true;
+        else if(response.equals("started")) Client_Loader.started = true;
         }catch(IOException | NumberFormatException | HeadlessException ex) {
             BaseUtils.warn("Processing error:", false);
             ex.printStackTrace();

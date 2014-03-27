@@ -54,7 +54,7 @@ public class Panel extends JPanel {
     }
     
     public void paintBorders(Graphics2D g) {
-            int top = bg == background ? 30 : 5;
+            int top = bg == background ? 30 : 15;
             g.drawImage(FileUtils.border, 0, 0, getWidth(), top, null);
             g.drawImage(FileUtils.border, 0, 0, 5, getHeight(), null);
             g.drawImage(FileUtils.border, 0, getHeight()-5, getWidth(), 5, null);

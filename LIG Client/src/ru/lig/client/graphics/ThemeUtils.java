@@ -6,9 +6,7 @@ package ru.lig.client.graphics;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.Iterator;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import ru.lig.client.Client_Loader;
 import static ru.lig.client.graphics.Frame.listeners;
@@ -110,9 +108,13 @@ public class ThemeUtils {
             for(int i = 0; i < images.length && i < 4 && images[i] != null; i++) {
                 ImageFrame iF = frame.ifs[i];
                 iF.panel = new Panel(frame, iF.width, iF.height, images[i]);
-                iF.update(iF.x + (int) frame.getBounds().getCenterX(), iF.y + (int) frame.getBounds().getCenterY());
+                int x, y;
+                x = (i & 1) == 0 ? (int) frame.getBounds().getMinX() - iF.width - 5 : (int) frame.getBounds().getMaxX() + 5;
+                y = i > 1 ? (int) frame.getBounds().getMaxY() - iF.height : (int) frame.getBounds().getMinY();
+                iF.update(x, y);
                 iF.add(iF.panel);
-                iF.setVisible(true);
+                //iF.panel.add(iF.dragger);
+                if(!Client_Loader.noImages) iF.setVisible(true);
             }
         }
     }
@@ -136,6 +138,7 @@ public class ThemeUtils {
             ImageFrame iF = frame.ifs[i];
             iF.setVisible(false);
             if(iF.panel != null) {
+                iF.panel.remove(iF.dragger);
                 iF.remove(iF.panel);
                 iF.panel = null;
             }
